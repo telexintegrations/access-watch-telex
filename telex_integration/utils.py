@@ -28,7 +28,7 @@ def monitor_task(payload):
     # Get all cached data
     cached_data = AccessMonitoringMiddleware.get_all_cached_data()
 
-    logger.info(cached_data, "CACHE")
+    logger.info(cached_data)
 
     # Filter cached data based on access count and the threshold
     filtered_data = []
@@ -76,7 +76,6 @@ def monitor_task(payload):
     # Send the request to the return_url
     logger.info("This line is running")
     return_url = f"{payload['return_url']}"
-    logger.info(return_url, payload['channel_id'], payload['return_url'])
 
     requests.post(return_url, json=data)
 
