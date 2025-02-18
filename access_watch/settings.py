@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-4jnvnz7m-+cm_+%g6$+amon$axcv!etcx@tmm3re8y-wj##a9x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auths',
+    'telex_integration',
 ]
 
 MIDDLEWARE = [
