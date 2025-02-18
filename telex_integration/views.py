@@ -29,10 +29,23 @@ class GetIntegrationJson(APIView):
             },
             "integration_category": "Monitoring & Logging",
             "integration_type": "interval",
+            "is_active": True,
             "key_features": [
-               "Feature description 1.",
-                "Feature description 2.",
+                (
+                    "Real-time monitoring of user access attempts on secured endpoints,"
+                    "including both anonymous and authenticated users."
+                ),
+                (
+                    "Customizable settings to filter and track access details such as timestamp,"
+                    "user activity thresholds, and anonymized user tracking."
+                ),
             ],
+            "permissions": {
+                "monitoring_user": {
+                    "always_online": True,
+                    "display_name": "Access Monitor"
+            }
+            },
             "settings": [
                 {
                     "label": "Monitor Anonymous user",
@@ -56,7 +69,7 @@ class GetIntegrationJson(APIView):
                     "label": "interval",
                     "type": "text",
                     "required": True,
-                    "default": "* * * * * *"
+                    "default": "* * * * *"
                 }
             ],
             "tick_url": f"{base_url}/telex/tick/",
