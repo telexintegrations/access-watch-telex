@@ -12,7 +12,7 @@ class GetIntegrationJson(APIView):
         scheme = request.scheme
         host = request.get_host()
         #base_url = f"{scheme}://{host}"
-        base_url = "https://security-monitor-n8nr4vciz-lmopes-projects.vercel.app"
+        base_url = "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app"
 
         data = {
             "descriptions": {
@@ -71,7 +71,7 @@ class GetIntegrationJson(APIView):
                     "default": "* * * * *"
                 }
             ],
-            "tick_url": f"{base_url}/telex/tick/",
+            "tick_url": f"{base_url}/tick/",
             "target_url": "https://ping.telex.im/v1/return/"
         }
 
