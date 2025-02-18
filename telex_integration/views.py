@@ -15,42 +15,37 @@ class GetIntegrationJson(APIView):
         base_url = "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app"
 
         data = {
-            "descriptions": {
-                "app_name": "Security Monitor",
+            "data": {
+                "date": {
+                "created_at": "2025-02-18",
+                "updated_at": "2025-02-18"
+                },
+                "descriptions": {
+                "app_name": "Access Watch",
                 "app_description": "Monitors users attempt to access sensitive data",
-                "app_url": base_url,
-                "app_logo": (
-                    "https://media.istockphoto.com/id/953520974/vector/"
-                    "tick-mark-approved-icon-shield-vector-on-white-background.jpg?"
-                    "s=2048x2048&w=is&k=20&c=PzcwFJsLFCrETZ2MU_Xw4wChwiS5O09bqFdTYkkRH5k="
-                ),
+                "app_logo": "https://media.istockphoto.com/id/953520974/vector/tick-mark-approved-icon-shield-vector-on-white-background.jpg?s=2048x2048&w=is&k=20&c=PzcwFJsLFCrETZ2MU_Xw4wChwiS5O09bqFdTYkkRH5k=",
+                "app_url": "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app",
                 "background_color": "#fff"
-            },
-            "integration_category": "Monitoring & Logging",
-            "integration_type": "interval",
-            "is_active": True,
-            "key_features": [
-                (
-                    "Real-time monitoring of user access attempts on secured endpoints,"
-                    "including both anonymous and authenticated users."
-                ),
-                (
-                    "Customizable settings to filter and track access details such as timestamp,"
-                    "user activity thresholds, and anonymized user tracking."
-                ),
-            ],
-            "permissions": {
-                "monitoring_user": {
-                    "always_online": True,
-                    "display_name": "Access Monitor"
-            }
-            },
-            "settings": [
+                },
+                "is_active": True,
+                "integration_type": "interval",
+                "key_features": [
+                "Customizable settings to filter and track access details such as timestamp user activity thresholds",
+                "and anonymized user tracking."
+                ],
+                "author": "Muhammed",
+                "settings": [
                 {
-                    "label": "Monitor Anonymous user",
-                    "type": "checkbox",
+                    "label": "interval",
+                    "type": "text",
                     "required": True,
-                    "default": "Yes"
+                    "default": "* * * * *"
+                },
+                {
+                    "label": "Access Attempt Threshold",
+                    "type": "number",
+                    "required": True,
+                    "default": "5"
                 },
                 {
                     "label": "Include timestamp for last user request",
@@ -59,21 +54,16 @@ class GetIntegrationJson(APIView):
                     "default": "Yes"
                 },
                 {
-                    "label": "Access Attempt Threshold",
-                    "type": "number",
-                    "required": False,
-                    "default": "5"
-                },
-                {
-                    "label": "interval",
-                    "type": "text",
+                    "label": "Monitor Anonymous user",
+                    "type": "checkbox",
                     "required": True,
-                    "default": "* * * * *"
+                    "default": "Yes"
                 }
-            ],
-            "tick_url": f"{base_url}/tick/",
-            "target_url": "https://ping.telex.im/v1/return/"
-        }
+                ],
+                "target_url": "https://ping.telex.im/v1/return",
+                "tick_url": "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app/tick/"
+            }
+            }
 
         return Response({"data": data}, status=status.HTTP_200_OK)
 
