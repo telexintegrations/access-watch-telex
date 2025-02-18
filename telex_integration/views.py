@@ -12,7 +12,8 @@ class GetIntegrationJson(APIView):
         scheme = request.scheme
         host = request.get_host()
         #base_url = f"{scheme}://{host}"
-        base_url = "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app"
+        #vercel_base_url = "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app"
+        render_base_url = "https://security-monitor-ot22.onrender.com"
 
         data = {
             "data": {
@@ -24,7 +25,7 @@ class GetIntegrationJson(APIView):
                 "app_name": "Access Watch",
                 "app_description": "Monitors users attempt to access sensitive data",
                 "app_logo": "https://media.istockphoto.com/id/953520974/vector/tick-mark-approved-icon-shield-vector-on-white-background.jpg?s=2048x2048&w=is&k=20&c=PzcwFJsLFCrETZ2MU_Xw4wChwiS5O09bqFdTYkkRH5k=",
-                "app_url": "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app",
+                "app_url": render_base_url,
                 "background_color": "#fff"
                 },
                 "is_active": True,
@@ -62,7 +63,7 @@ class GetIntegrationJson(APIView):
                 }
                 ],
                 "target_url": "https://ping.telex.im/v1/return",
-                "tick_url": "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app/tick/"
+                "tick_url": f"{render_base_url}/tick/"
             }
             }
 
