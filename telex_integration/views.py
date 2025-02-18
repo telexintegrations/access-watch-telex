@@ -12,8 +12,7 @@ class GetIntegrationJson(APIView):
         scheme = request.scheme
         host = request.get_host()
         #base_url = f"{scheme}://{host}"
-        print(f"{scheme}://{host}")
-        base_url = "https://9da5-102-89-84-137.ngrok-free.app"
+        base_url = "https://security-monitor-n8nr4vciz-lmopes-projects.vercel.app"
 
         data = {
             "descriptions": {
