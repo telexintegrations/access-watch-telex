@@ -30,14 +30,8 @@ class GetIntegrationJson(APIView):
             "integration_category": "Monitoring & Logging",
             "integration_type": "interval",
             "key_features": [
-                (
-                    "Real-time monitoring of user access attempts on secured endpoints,"
-                    "including both anonymous and authenticated users."
-                ),
-                (
-                    "Customizable settings to filter and track access details such as timestamp,"
-                    "user activity thresholds, and anonymized user tracking."
-                ),
+               "Feature description 1.",
+                "Feature description 2.",
             ],
             "settings": [
                 {
@@ -66,9 +60,8 @@ class GetIntegrationJson(APIView):
                 }
             ],
             "tick_url": f"{base_url}/telex/tick/",
-            "target_url": "https://ping.telex.im/v1/return/01951715-27aa-7f6e-999e-1f31cf6371d7"
+            "target_url": "https://ping.telex.im/v1/return/"
         }
-
 
         return Response({"data": data}, status=status.HTTP_200_OK)
 
