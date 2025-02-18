@@ -67,7 +67,8 @@ def monitor_task(payload):
     AccessMonitoringMiddleware.clear_all_cache(threshold)
 
     # Send the request to the return_url
-    requests.post(payload['return_url'], json=data)
+    return_url = f"{payload['return_url']}/{payload['channel_id']}"
+    requests.post(return_url, json=data)
 
 def run_background_task(payload):
     # Create a process pool and submit a task to run in another process
