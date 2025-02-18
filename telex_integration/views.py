@@ -28,6 +28,7 @@ class GetIntegrationJson(APIView):
                 "background_color": "#fff"
                 },
                 "is_active": True,
+                "integration_category": "Monitoring & Logging",
                 "integration_type": "interval",
                 "key_features": [
                 "Customizable settings to filter and track access details such as timestamp user activity thresholds",
@@ -65,7 +66,7 @@ class GetIntegrationJson(APIView):
             }
             }
 
-        return Response({"data": data}, status=status.HTTP_200_OK)
+        return Response(data, status=status.HTTP_200_OK)
 
 class Tick(APIView):
     permission_classes = [AllowAny]
