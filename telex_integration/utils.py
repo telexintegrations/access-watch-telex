@@ -3,6 +3,11 @@ import requests
 
 from access_watch.middlewares import AccessMonitoringMiddleware
 
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 def monitor_task(payload):
     # Initialize settings with default values
     monitor_anonymous = "Yes"
@@ -22,6 +27,8 @@ def monitor_task(payload):
 
     # Get all cached data
     cached_data = AccessMonitoringMiddleware.get_all_cached_data()
+
+    logger.info(cached_data, "CACHE")
 
     # Filter cached data based on access count and the threshold
     filtered_data = []
@@ -67,7 +74,9 @@ def monitor_task(payload):
     AccessMonitoringMiddleware.clear_all_cache(threshold)
 
     # Send the request to the return_url
+    logger.info("This line is running")
     return_url = f"{payload['return_url']}/{payload['channel_id']}"
+    logger.info(return_url, data)
     requests.post(return_url, json=data)
 
 def run_background_task(payload):
