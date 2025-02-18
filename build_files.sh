@@ -1,11 +1,13 @@
-#!/bin/bash
-# Install Python dependencies
-echo "Installing Python dependencies..."
+#!/usr/bin/env bash
+# Exit on error
+set -o errexit
+
+# Modify this line as needed for your package manager (pip, poetry, etc.)
 pip install -r requirements.txt
 
-# Apply database migrations
-echo "Applying database migrations..."
-python manage.py migrate
+# Convert static asset files
+python manage.py collectstatic --no-input
 
-# Collect static files
-python manage.py collectstatic --noinput
+# Apply any outstanding database migrations
+python manage.py migrate
+python manage.py createcachetable
