@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.urlpatterns import format_suffix_patterns
+
+from telex_integration import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('auths.urls')),
-    path('integration/', include('telex_integration.urls')),
+    path('integration/', views.GetIntegrationJson.as_view(), name='integration_json'),
+    path('tick/', views.Tick.as_view(), name='tick'),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
