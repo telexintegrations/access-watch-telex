@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "access_watch/wsgi.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.11",
+          "buildCommand": "bash build_files.sh"
+        }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "access_watch/wsgi.py"
+      }
+    ]
+  }
+    

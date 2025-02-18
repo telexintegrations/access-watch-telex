@@ -5,7 +5,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
 
 urlpatterns = [
-    path('integration/', views.GetIntegrationJson.as_view(), name='integration_json'),
+    path('/', views.GetIntegrationJson.as_view(), name='integration_json'),
     path('tick/', views.Tick.as_view(), name='tick'),
     ]
 

@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('auths.urls')),
-    path('telex/', include('telex_integration.urls')),
+    path('integration/', include('telex_integration.urls')),
 ]
