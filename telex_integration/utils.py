@@ -65,7 +65,7 @@ def monitor_task(payload):
     # Data follows telex webhook format, calling the return_url
     data = {
         "message": message,
-        "username": "Security Monitor",
+        "username": "LMO",
         "event_name": "Security Check",
         "status": "error" if filtered_data else "success"
     }
