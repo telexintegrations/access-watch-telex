@@ -68,7 +68,7 @@ class GetIntegrationJson(APIView):
                     "default": "Yes"
                 }
                 ],
-                "target_url": "https://ping.telex.im/v1/return",
+                "target_url": "",
                 "tick_url": f"{render_base_url}/tick/"
             }
             }
