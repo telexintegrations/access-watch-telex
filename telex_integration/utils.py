@@ -54,6 +54,8 @@ def monitor_task(payload):
 
             filtered_data.append(data_entry)
 
+    logger.info(filtered_data)
+
     # Prepare the message with the filtered data
     message = "\n".join([
         f"User: {entry['key']} - Attempts: {entry['access_count']}" + 
@@ -69,6 +71,8 @@ def monitor_task(payload):
         "event_name": "Security Check",
         "status": "error" if filtered_data else "success"
     }
+
+    logger.info(data)
 
     # clear cache
     AccessMonitoringMiddleware.clear_all_cache(threshold)
