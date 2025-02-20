@@ -30,9 +30,6 @@ def monitor_task(payload):
 
     logger.info(cached_data)
 
-    AccessMonitoringMiddleware.clear_all_cache(threshold)
-
-
     # Filter cached data based on access count and the threshold
     filtered_data = []
     for key, value in cached_data.items():
@@ -78,9 +75,9 @@ def monitor_task(payload):
 
     # Send the request to the return_url
     logger.info("This line is running")
-    # return_url = f"{payload['return_url']}"
+    return_url = f"{payload['return_url']}"
 
-    # requests.post(return_url, json=data)
+    requests.post(return_url, json=data)
 
     # Test with webhook url
     url = "https://ping.telex.im/v1/webhooks/01951715-27aa-7f6e-999e-1f31cf6371d7"
