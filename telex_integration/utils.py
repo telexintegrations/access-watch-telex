@@ -29,6 +29,8 @@ def monitor_task(payload):
     cached_data = AccessMonitoringMiddleware.get_all_cached_data()
 
     logger.info(cached_data)
+    logger.info("CHECK")
+    logger.info(threshold)
 
     # Filter cached data based on access count and the threshold
     filtered_data = []
@@ -54,6 +56,7 @@ def monitor_task(payload):
 
             filtered_data.append(data_entry)
 
+    logger.info("CHECK TWO 2")
     logger.info(filtered_data)
 
     # Prepare the message with the filtered data
@@ -72,6 +75,7 @@ def monitor_task(payload):
         "status": "error" if filtered_data else "success"
     }
 
+    logger.info("CHECK THREE 3")
     logger.info(data)
 
     # clear cache
