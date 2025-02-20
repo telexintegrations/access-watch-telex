@@ -65,7 +65,7 @@ def monitor_task(payload):
     # Data follows telex webhook format, calling the return_url
     data = {
         "message": message,
-        "username": "Security Monitor",
+        "username": "LMO",
         "event_name": "Security Check",
         "status": "error" if filtered_data else "success"
     }
@@ -78,6 +78,18 @@ def monitor_task(payload):
     return_url = f"{payload['return_url']}"
 
     requests.post(return_url, json=data)
+
+    # Test with webhook url
+    # url = "https://ping.telex.im/v1/webhooks/01951715-27aa-7f6e-999e-1f31cf6371d7"
+
+    # requests.post(
+    #     url,
+    #     json=data,
+    #     headers={
+    #         "Accept": "application/json",
+    #         "Content-Type": "application/json"
+    #     }
+    # )
 
 def run_background_task(payload):
     # Create a process pool and submit a task to run in another process

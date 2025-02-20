@@ -35,12 +35,6 @@ class GetIntegrationJson(APIView):
                 "Customizable settings to filter and track access details such as timestamp user activity thresholds",
                 "and anonymized user tracking."
                 ],
-                "output": [
-                    {
-                        "label": "secure-app-engineering-team",
-                        "value": True
-                    }
-                ],
                 "author": "Muhammed",
                 "settings": [
                 {
@@ -68,7 +62,7 @@ class GetIntegrationJson(APIView):
                     "default": "Yes"
                 }
                 ],
-                "target_url": "https://ping.telex.im/v1/return",
+                "target_url": "",
                 "tick_url": f"{render_base_url}/tick/"
             }
             }
