@@ -98,8 +98,8 @@ class AccessMonitoringMiddleware:
 
         for key in cached_keys:
             data = cache.get(key)
-            if data and data.get("count", 0) >= threshold:
-                cache.delete(key)
+            #if data and data.get("count", 0) >= threshold:
+            cache.delete(key)
 
         # Update the cached keys list to remove deleted keys
         cache.set("cached_keys", {key for key in cached_keys if cache.get(key)}, timeout=86400)
