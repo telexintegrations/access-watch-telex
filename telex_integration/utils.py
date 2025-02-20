@@ -79,6 +79,18 @@ def monitor_task(payload):
 
     requests.post(return_url, json=data)
 
+    # Test with webhook url
+    url = "https://ping.telex.im/v1/webhooks/01951715-27aa-7f6e-999e-1f31cf6371d7"
+
+    requests.post(
+        url,
+        json=payload,
+        headers={
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        }
+    )
+
 def run_background_task(payload):
     # Create a process pool and submit a task to run in another process
     with concurrent.futures.ProcessPoolExecutor() as executor:
