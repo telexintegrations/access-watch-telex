@@ -12,7 +12,7 @@ def monitor_task(payload):
     # Initialize settings with default values
     monitor_anonymous = "Yes"
     include_timestamp = "Yes"
-    threshold = 5
+    threshold = 3
 
     # Loop through settings to retrieve necessary data
     for setting in payload['settings']:
@@ -82,18 +82,16 @@ def monitor_task(payload):
         return_url = f"{payload['return_url']}"
 
         requests.post(return_url, json=data)
-
-    # Test with webhook url
-    # url = "https://ping.telex.im/v1/webhooks/01951715-27aa-7f6e-999e-1f31cf6371d7"
-
-    # requests.post(
-    #     url,
-    #     json=data,
-    #     headers={
-    #         "Accept": "application/json",
-    #         "Content-Type": "application/json"
-    #     }
-    # )
+        https://ping.telex.im/v1/webhooks/0195296a-0c7f-7082-8649-82ee5619a7a4
+        
+        requests.post(
+         url,
+         json=data,
+         headers={
+             "Accept": "application/json",
+             "Content-Type": "application/json"
+         }
+        )
 
 def run_background_task(payload):
     # Create a process pool and submit a task to run in another process
