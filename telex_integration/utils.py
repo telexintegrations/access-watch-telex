@@ -54,30 +54,34 @@ def monitor_task(payload):
 
             filtered_data.append(data_entry)
 
-    # Prepare the message with the filtered data
-    message = "\n".join([
-        f"User: {entry['key']} - Attempts: {entry['access_count']}" + 
-        (f" - Last Access: {entry['timestamp']}" if 'timestamp' in entry else "")
-        for entry in filtered_data
-    ]) or "No significant access data to report."
-
-
-    # Data follows telex webhook format, calling the return_url
-    data = {
-        "message": message,
-        "username": "LMO",
-        "event_name": "Security Check",
-        "status": "error" if filtered_data else "success"
-    }
-
-    # clear cache
-    AccessMonitoringMiddleware.clear_all_cache(threshold)
-
-    # Send the request to the return_url
     logger.info("This line is running")
-    return_url = f"{payload['return_url']}"
 
-    requests.post(return_url, json=data)
+    if len(filtered_data) > 0:
+        logger.info("There is a message to be sent")
+
+        # Prepare the message with the filtered data
+        message = "\n".join([
+            f"User: {entry['key']} - Attempts: {entry['access_count']}" + 
+            (f" - Last Access: {entry['timestamp']}" if 'timestamp' in entry else "")
+            for entry in filtered_data
+        ])
+
+
+        # Data follows telex webhook format, calling the return_url
+        data = {
+            "message": message,
+            "username": "LMO",
+            "event_name": "Security Check",
+            "status": "error" if filtered_data else "success"
+        }
+
+        # clear cache
+        AccessMonitoringMiddleware.clear_all_cache(threshold)
+
+        # Send the request to the return_url
+        return_url = f"{payload['return_url']}"
+
+        requests.post(return_url, json=data)
 
     # Test with webhook url
     # url = "https://ping.telex.im/v1/webhooks/01951715-27aa-7f6e-999e-1f31cf6371d7"
