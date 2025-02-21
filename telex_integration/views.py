@@ -13,7 +13,7 @@ class GetIntegrationJson(APIView):
         host = request.get_host()
         #base_url = f"{scheme}://{host}"
         #vercel_base_url = "https://security-monitor-git-chore-add-cors-support-lmopes-projects.vercel.app"
-        render_base_url = "https://security-monitor-ot22.onrender.com"
+        render_base_url = "https://access-watch.onrender.com"
 
         data = {
             "data": {
