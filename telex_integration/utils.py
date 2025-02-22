@@ -60,9 +60,12 @@ def monitor_task(payload):
         logger.info("There is a message to be sent")
 
         # Prepare the message with the filtered data
-        message = "\n".join([
-            f"User: {entry['key']} - Attempts: {entry['access_count']}" + 
-            (f" - Last Access: {entry['timestamp']}" if 'timestamp' in entry else "")
+        message = "🚨 **Security Alert: Unauthorized Access Attempt Detected** 🚨\n\n"
+
+        message += "\n\n".join([
+            f"👤 **User**: {entry['key']}\n"
+            f"🔢 **Attempts**: {entry['access_count']}\n"
+            f"⏳ **Last Access**: {entry['timestamp'] if 'timestamp' in entry else 'N/A'}"
             for entry in filtered_data
         ])
 
