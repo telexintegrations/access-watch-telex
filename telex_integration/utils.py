@@ -85,7 +85,7 @@ def monitor_task(payload):
         return_url = f"{payload['return_url']}"
 
         requests.post(return_url, json=data)
-        url = "https://ping.telex.im/v1/webhooks/0195296a-0c7f-7082-8649-82ee5619a7a4"
+        url = "https://ping.telex.im/v1/webhooks/01953389-c24d-76d0-852b-a8f1f1cdfee0"
         
         requests.post(
          url,

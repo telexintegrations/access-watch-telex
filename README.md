@@ -66,7 +66,7 @@ Authorization: Bearer YOUR_ACCESS_TOKEN
 If the user does not have the required permissions, the attempt will be logged in Telex.
 
 ## Testing Integration on Test Telex Organization
-Notifications will be sent to the *access watch* channel.
+Notifications will be sent to the *access watch telex* channel.
 
 To test quickly, users can make a request to a protected endpoint **without an authentication token**. The integration checks for two types of users:
 1. **Anonymous users** (no authentication token provided)
@@ -77,7 +77,7 @@ Users can test easily as anonymous users by simply making a request to a protect
 ```http
 GET [/api/v1/secured-data/](https://access-watch-ix9w.onrender.com/api/v1/secured-data)
 ```
-This will immediately trigger a notification in the *access watch* channel.
+This will immediately trigger a notification in the *access watch telex* channel.
 
 ### Testing as an Authenticated User
 To test as an authenticated but unauthorized user:
@@ -85,10 +85,10 @@ To test as an authenticated but unauthorized user:
 2. **Login** to get an access token.
 3. **Make a request** to the protected endpoint with the token.
 
-If the user does not have the necessary permissions, the access attempt will be logged immediately in the *access watch* channel.
+If the user does not have the necessary permissions, the access attempt will be logged immediately in the *access watch telex* channel.
 
 ## Screenshots
-Example notification on Test Telex organization in *access watch* channel
+Example notification on Test Telex organization in *access watch telex* channel
 ![Telex Logs](https://github.com/user-attachments/assets/c2246be6-c88d-47cb-a68d-8b59476c815d)
 
 ![Create integration app](https://github.com/user-attachments/assets/a4a9419d-f28f-4d16-b448-cdbf4640547b)
