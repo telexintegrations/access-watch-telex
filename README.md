@@ -32,7 +32,7 @@ After deploying, test the integration by triggering secured access attempts.
 Use the provided authentication endpoints to create a user and obtain a token.
 
 ### BASE URL
-https://access-watch.onrender.com
+https://access-watch-ix9w.onrender.com
 
 #### Register
 ```http
@@ -75,7 +75,7 @@ To test quickly, users can make a request to a protected endpoint **without an a
 ### Quick Testing as an Anonymous User
 Users can test easily as anonymous users by simply making a request to a protected endpoint without a token:
 ```http
-GET [/api/v1/secured-data/](https://access-watch.onrender.com/api/v1/secured-data)
+GET [/api/v1/secured-data/](https://access-watch-ix9w.onrender.com/api/v1/secured-data)
 ```
 This will immediately trigger a notification in the *access watch* channel.
 
