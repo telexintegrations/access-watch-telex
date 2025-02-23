@@ -1,4 +1,4 @@
-# Access Watch - Telex Integration
+# Attempts to access sensitive data - Telex Integration
 
 ## Overview
 Access Watch is a security monitoring integration that tracks user access attempts to sensitive data. This integration works with Telex to log unauthorized access attempts and notify the team in real-time. It ensures that access control policies are enforced and potential security threats are identified promptly.
