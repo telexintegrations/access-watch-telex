@@ -22,7 +22,7 @@ class GetIntegrationJson(APIView):
                 "updated_at": "2025-02-18"
                 },
                 "descriptions": {
-                "app_name": "Access Watch",
+                "app_name": "Attempts to access sensitive data",
                 "app_description": "Monitors users attempt to access sensitive data",
                 "app_logo": "https://media.istockphoto.com/id/953520974/vector/tick-mark-approved-icon-shield-vector-on-white-background.jpg?s=2048x2048&w=is&k=20&c=PzcwFJsLFCrETZ2MU_Xw4wChwiS5O09bqFdTYkkRH5k=",
                 "app_url": render_base_url,
