@@ -98,5 +98,5 @@ def monitor_task(payload):
 
 def run_background_task(payload):
     # Create a process pool and submit a task to run in another process
-    with concurrent.futures.ProcessPoolExecutor() as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
         executor.submit(monitor_task, payload)
