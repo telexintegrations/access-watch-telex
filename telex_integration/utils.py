@@ -56,7 +56,7 @@ def monitor_task(payload):
 
     logger.info("This line is running")
 
-    if len(filtered_data) > 0:
+    if len(filtered_data) >= 0:
         logger.info("There is a message to be sent")
 
         # Prepare the message with the filtered data
@@ -67,7 +67,7 @@ def monitor_task(payload):
             f"🔢 **Attempts**: {entry['access_count']}\n"
             f"⏳ **Last Access**: {entry['timestamp'] if 'timestamp' in entry else 'N/A'}"
             for entry in filtered_data
-        ])
+        ]) or "No significant access data to report."
 
 
         # Data follows telex webhook format, calling the return_url
@@ -82,7 +82,7 @@ def monitor_task(payload):
         AccessMonitoringMiddleware.clear_all_cache(threshold)
 
         url = "https://ping.telex.im/v1/webhooks/019536c8-2990-7237-8ac0-3c1764c639d3"
-        
+        logger.info("Sending data to channel")
         requests.post(
          url,
          json=data,
