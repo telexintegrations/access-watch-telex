@@ -81,11 +81,7 @@ def monitor_task(payload):
         # clear cache
         AccessMonitoringMiddleware.clear_all_cache(threshold)
 
-        # Send the request to the return_url
-        return_url = f"{payload['return_url']}"
-
-        requests.post(return_url, json=data)
-        url = "https://ping.telex.im/v1/webhooks/01953389-c24d-76d0-852b-a8f1f1cdfee0"
+        url = "https://ping.telex.im/v1/webhooks/019536c8-2990-7237-8ac0-3c1764c639d3"
         
         requests.post(
          url,
