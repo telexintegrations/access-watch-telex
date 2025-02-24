@@ -56,7 +56,7 @@ def monitor_task(payload):
 
     logger.info("This line is running")
 
-    if len(filtered_data) >= 0:
+    if len(filtered_data) > 0:
         logger.info("There is a message to be sent")
 
         # Prepare the message with the filtered data
