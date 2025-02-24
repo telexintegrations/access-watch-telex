@@ -81,7 +81,7 @@ def monitor_task(payload):
         # clear cache
         AccessMonitoringMiddleware.clear_all_cache(threshold)
 
-        url = "https://ping.telex.im/v1/webhooks/019536c8-2990-7237-8ac0-3c1764c639d3"
+        url = "https://ping.telex.im/v1/webhooks/01953732-e071-747e-8f23-db97bbfd1859"
         logger.info("Sending data to channel")
         requests.post(
          url,
