@@ -16,56 +16,88 @@ class GetIntegrationJson(APIView):
         render_base_url = "https://access-watch-ix9w.onrender.com"
 
         data = {
-            "data": {
-                "date": {
-                "created_at": "2025-02-18",
-                "updated_at": "2025-02-18"
-                },
-                "descriptions": {
-                "app_name": "Attempts to access sensitive data",
-                "app_description": "Monitors users attempt to access sensitive data",
-                "app_logo": "https://media.istockphoto.com/id/953520974/vector/tick-mark-approved-icon-shield-vector-on-white-background.jpg?s=2048x2048&w=is&k=20&c=PzcwFJsLFCrETZ2MU_Xw4wChwiS5O09bqFdTYkkRH5k=",
-                "app_url": render_base_url,
-                "background_color": "#fff"
-                },
-                "is_active": True,
-                "integration_category": "Monitoring & Logging",
-                "integration_type": "interval",
-                "key_features": [
-                "Customizable settings to filter and track access details such as timestamp user activity thresholds",
-                "and anonymized user tracking."
-                ],
-                "author": "Muhammed",
-                "settings": [
-                {
-                    "label": "interval",
-                    "type": "text",
-                    "required": True,
-                    "default": "* * * * *"
-                },
-                {
-                    "label": "Access Attempt Threshold",
-                    "type": "number",
-                    "required": True,
-                    "default": "5"
-                },
-                {
-                    "label": "Include timestamp for last user request",
-                    "type": "checkbox",
-                    "required": True,
-                    "default": "Yes"
-                },
-                {
-                    "label": "Monitor Anonymous user",
-                    "type": "checkbox",
-                    "required": True,
-                    "default": "Yes"
-                }
-                ],
-                "target_url": "",
-                "tick_url": f"{render_base_url}/tick/"
+        "data": {
+            "date": {
+            "created_at": "2025-03-23",
+            "updated_at": "2025-03-23"
+            },
+            "descriptions": {
+            "app_name": "GenzAd",
+            "app_description": "A customer support integration for viewing contact us messages",
+            "app_logo": "https://res.cloudinary.com/dzu8uczou/image/upload/v1742658418/Group_2_o3bhsu.png",
+            "app_url": "https://staging.api.genz.ad/",
+            "background_color": "#fff"
+            },
+            "is_active": True,
+            "integration_type": "modifier",
+            "integration_category": "CRM & Customer Support",
+            "key_features": [
+            "Receive messages from Genz Ad Contact us page",
+            "Format messages based on predefined templates or logic."
+            ],
+            "author": "LMO",
+            "settings": [
+            {
+                "label": "maxMessageLength",
+                "type": "number",
+                "required": True,
+                "default": "500"
             }
-            }
+            ]
+        }
+    }
+
+        # data = {
+        #     "data": {
+        #         "date": {
+        #         "created_at": "2025-02-18",
+        #         "updated_at": "2025-02-18"
+        #         },
+        #         "descriptions": {
+        #         "app_name": "Access Watch",
+        #         "app_description": "Monitors users attempt to access sensitive data",
+        #         "app_logo": "https://media.istockphoto.com/id/953520974/vector/tick-mark-approved-icon-shield-vector-on-white-background.jpg?s=2048x2048&w=is&k=20&c=PzcwFJsLFCrETZ2MU_Xw4wChwiS5O09bqFdTYkkRH5k=",
+        #         "app_url": render_base_url,
+        #         "background_color": "#fff"
+        #         },
+        #         "is_active": True,
+        #         "integration_category": "Monitoring & Logging",
+        #         "integration_type": "interval",
+        #         "key_features": [
+        #         "Customizable settings to filter and track access details such as timestamp user activity thresholds",
+        #         "and anonymized user tracking."
+        #         ],
+        #         "author": "Muhammed",
+        #         "settings": [
+        #         {
+        #             "label": "interval",
+        #             "type": "text",
+        #             "required": True,
+        #             "default": "* * * * *"
+        #         },
+        #         {
+        #             "label": "Access Attempt Threshold",
+        #             "type": "number",
+        #             "required": True,
+        #             "default": "5"
+        #         },
+        #         {
+        #             "label": "Include timestamp for last user request",
+        #             "type": "checkbox",
+        #             "required": True,
+        #             "default": "Yes"
+        #         },
+        #         {
+        #             "label": "Monitor Anonymous user",
+        #             "type": "checkbox",
+        #             "required": True,
+        #             "default": "Yes"
+        #         }
+        #         ],
+        #         "target_url": "",
+        #         "tick_url": f"{render_base_url}/tick/"
+        #     }
+        #     }
 
         return Response(data, status=status.HTTP_200_OK)
 
