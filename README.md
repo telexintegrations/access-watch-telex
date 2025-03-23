@@ -1,4 +1,4 @@
-# Access Watch - Telex Integration
+# Attempts to access sensitive data - Telex Integration
 
 ## Overview
 Access Watch is a security monitoring integration that tracks user access attempts to sensitive data. This integration works with Telex to log unauthorized access attempts and notify the team in real-time. It ensures that access control policies are enforced and potential security threats are identified promptly.
@@ -77,7 +77,7 @@ Users can test easily as anonymous users by simply making a request to a protect
 ```http
 GET [/api/v1/secured-data/](https://access-watch-ix9w.onrender.com/api/v1/secured-data)
 ```
-This will immediately trigger a notification in the *access watch telex* channel.
+This will immediately trigger a notification in the *attempts-to-access-sensitive-data* channel.
 
 ### Testing as an Authenticated User
 To test as an authenticated but unauthorized user:
@@ -85,10 +85,10 @@ To test as an authenticated but unauthorized user:
 2. **Login** to get an access token.
 3. **Make a request** to the protected endpoint with the token.
 
-If the user does not have the necessary permissions, the access attempt will be logged immediately in the *access watch telex* channel.
+If the user does not have the necessary permissions, the access attempt will be logged immediately in the *attempts-to-access-sensitive-data* channel.
 
 ## Screenshots
-Example notification on Test Telex organization in *access watch telex* channel
+Example notification on Test Telex organization in *attempts-to-access-sensitive-data* channel
 ![Telex Logs](https://github.com/user-attachments/assets/c2246be6-c88d-47cb-a68d-8b59476c815d)
 
 ![Create integration app](https://github.com/user-attachments/assets/a4a9419d-f28f-4d16-b448-cdbf4640547b)

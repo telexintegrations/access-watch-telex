@@ -67,7 +67,7 @@ def monitor_task(payload):
             f"🔢 **Attempts**: {entry['access_count']}\n"
             f"⏳ **Last Access**: {entry['timestamp'] if 'timestamp' in entry else 'N/A'}"
             for entry in filtered_data
-        ])
+        ]) or "No significant access data to report."
 
 
         # Data follows telex webhook format, calling the return_url
@@ -81,12 +81,8 @@ def monitor_task(payload):
         # clear cache
         AccessMonitoringMiddleware.clear_all_cache(threshold)
 
-        # Send the request to the return_url
-        return_url = f"{payload['return_url']}"
-
-        requests.post(return_url, json=data)
-        url = "https://ping.telex.im/v1/webhooks/01953389-c24d-76d0-852b-a8f1f1cdfee0"
-        
+        url = "https://ping.telex.im/v1/webhooks/01953732-e071-747e-8f23-db97bbfd1859"
+        logger.info("Sending data to channel")
         requests.post(
          url,
          json=data,
