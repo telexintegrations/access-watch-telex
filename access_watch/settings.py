@@ -97,18 +97,18 @@ SIMPLE_JWT = {
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv("DATABASE_URL", "postgresql://access_watch:NUh5U9Cd61CfHxz9vTw0Tbsl5yVKZbpv@dpg-cuqe6gt2ng1s73eqlffg-a/access_watch"),
-        conn_max_age=600
-    )}
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.getenv("DATABASE_URL", "postgresql://access_watch:NUh5U9Cd61CfHxz9vTw0Tbsl5yVKZbpv@dpg-cuqe6gt2ng1s73eqlffg-a/access_watch"),
+#         conn_max_age=600
+#     )}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
