@@ -43,7 +43,9 @@ class GetIntegrationJson(APIView):
                 "required": True,
                 "default": "500"
             }
-            ]
+            ],
+            "target_url": "",
+            "tick_url": f"{render_base_url}/tick/"
         }
     }
 
