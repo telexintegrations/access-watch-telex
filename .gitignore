@@ -171,3 +171,5 @@ cython_debug/
 .pypirc
 *.djcache
 *.djcache
+temp_auto_push.bat
+temp_interactive_push.bat
